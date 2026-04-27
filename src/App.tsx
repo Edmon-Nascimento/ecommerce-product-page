@@ -14,7 +14,7 @@ function App() {
       setCartQuantity(prev => prev + quantity)
       setQuantity(0)
     }else{
-      alert("Please select the product quantity")
+      alert("Please select a quantity before adding to cart")
     }
   }
 
