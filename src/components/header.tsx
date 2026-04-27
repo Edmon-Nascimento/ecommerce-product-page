@@ -4,11 +4,12 @@ import closeMenuIcon from "../assets/images/icon-close.svg"
 import cartIcon from "../assets/images/icon-cart.svg"
 import userImg from "../assets/images/image-avatar.png"
 
-function Header(){
+function Header({cart}){
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [isCartOpen, setIsCartOpen] = useState(false)
 
     return(
-        <header className="py-8 px-5">
+        <header className="p-5 relative">
             <section className="flex justify-between w-full items-center">
                 <div className="flex items-center gap-5">
                     <button className="cursor-pointer z-50" onClick={()=>setIsMenuOpen(prev => !prev)}>
@@ -18,14 +19,14 @@ function Header(){
                 </div>
 
                 <div className="flex items-center gap-5">
-                    <img className="size-8" src={cartIcon} alt="" />
-                    <img className="size-10" src={userImg} alt=""/>
+                    <button onClick={()=>setIsCartOpen(prev => !prev)}>
+                        <img className="size-6" src={cartIcon} alt="" />
+                    </button>
+                    <img className="size-8" src={userImg} alt=""/>
                 </div>
             </section>
 
-            <div className={`${isMenuOpen? "visble":"invisible"} fixed top-0 left-0 w-screen h-screen bg-black/50 z-40`} onClick={()=>setIsMenuOpen(prev => !prev)}>
-
-            </div>
+            <div className={`${isMenuOpen? "visble":"invisible"} fixed top-0 left-0 w-screen h-screen bg-black/50 z-40`} onClick={()=>setIsMenuOpen(prev => !prev)}></div>
 
             <article className={`${isMenuOpen? "visible":"invisible"}
                 fixed top-0 left-0 w-50 h-screen bg-white z-40
@@ -39,6 +40,12 @@ function Header(){
                         <a href="#" className="text-lg font-black">Contact</a>
                     </div>
             </article>
+
+            <div className={`${isCartOpen? "visible" : "invisible"}  min-h-50 max-h-fit w-11/12 rounded-lg bg-white absolute z-50 top-22 left-1/2 -translate-x-1/2 p-5`}>
+                <h2 className="font-bold text-xl mb-5">Cart</h2>
+                <div className="h-0.5 bg-black/10 w-full "></div>
+                {cart}
+            </div>
             
         </header>
     )
