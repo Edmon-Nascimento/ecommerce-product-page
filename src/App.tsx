@@ -35,11 +35,11 @@ function App() {
     <>
       <Header cart={cartQuantity} onDeleteCart={handleDelete} />
 
-      <main className="lg:flex lg:max-w-7xl lg:m-auto ">
+      <main className=" lg:flex lg:max-w-7xl lg:m-auto ">
         <section className="w-screen relative select-none">
-          <img src={images[imageIndex]} className="w-full max-w-xl lg:rounded-xl" />
+          <img src={images[imageIndex]} className="w-full lg:max-w-xl lg:rounded-xl" />
 
-          <div className="flex justify-between w-full max-w-xl px-3 absolute top-1/2 -translate-y-1/2 lg:hidden">
+          <div className="flex justify-between w-full px-3 absolute top-1/2 -translate-y-1/2 lg:hidden">
             <button
               className={`${imageIndex == 0 ? "pointer-events-none opacity-70" : "cursor-pointer"}`}
               onClick={() => setImageIndex((index) => index - 1)}
@@ -88,7 +88,7 @@ function App() {
             </div>
             <p className="line-through font-medium text-gray-500">$250.00</p>
           </div>
-          <div className="sm:hidden lg:flex items-center justify-between lg:gap-5">
+          <div className=" lg:flex items-center justify-between lg:gap-5">
             <div className="flex items-center justify-between p-3 mt-5 bg-gray-100 lg:w-1/2">
               <button
                 onClick={() => setQuantity((prev) => prev - 1)}
