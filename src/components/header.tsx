@@ -71,6 +71,7 @@ function Header({ cart, onDeleteCart }) {
         </div>
         
       </section>
+      <div className="sm:hidden lg:block lg:h-0.5 lg:bg-black/10 lg:mt-10 lg:mb-10"></div>
 
       <div
         className={`${isMenuOpen ? "visble" : "invisible"} fixed top-0 left-0 w-screen h-screen bg-black/50 z-40 lg:hidden`}
@@ -103,7 +104,7 @@ function Header({ cart, onDeleteCart }) {
                     </div>
                 </div>
               </div>
-              <button className="bg-orange-500 p-3 w-full font-bold text-lg rounded-lg" onClick={()=>handleCheckout()}>Checkout</button>
+              <button className="bg-orange-500 p-3 w-full font-bold text-lg rounded-lg" onClick={()=>{handleCheckout(); onDeleteCart()}}>Checkout</button>
           </div>
         )}
       </div>
