@@ -17,22 +17,49 @@ function Header({ cart, onDeleteCart }) {
   
 
   return (
-    <header className="p-5 relative">
+    <header className="p-5 relative max-w-7xl m-auto">
       <section className="flex justify-between w-full items-center">
-        <div className="flex items-center gap-5">
-          <button
-            className="cursor-pointer z-50"
-            onClick={() => setIsMenuOpen((prev) => !prev)}
-          >
-            <img
-              className="size-5 z-50"
-              src={isMenuOpen ? closeMenuIcon : menuIcon}
-              alt=""
-            />
-          </button>
-          <h1 className="text-4xl font-bold">sneakers</h1>
-        </div>
 
+        <div className="lg:flex lg:items-center lg:gap-5">
+          <div className="flex items-center gap-5">
+            <button
+              className="cursor-pointer z-60 lg:invisible"
+              onClick={() => setIsMenuOpen((prev) => !prev)}
+            >
+              <img
+                className="size-5 z-50"
+                src={isMenuOpen ? closeMenuIcon : menuIcon}
+                alt=""
+              />
+            </button>
+            <h1 className="text-4xl font-bold">sneakers</h1>
+          </div>
+          <article
+          className={`${isMenuOpen ? "visible" : "invisible"}
+                  fixed top-0 left-0 w-50 h-screen bg-white z-50
+                  lg:static lg:visible lg:h-fit lg:w-fit
+                  `}
+                >
+          <div className="flex flex-col pt-30 pl-8 gap-5
+                          lg:flex-row lg:pt-0">
+            <a href="#" className="text-lg font-black lg:font-normal">
+              Collections
+            </a>
+            <a href="#" className="text-lg font-black lg:font-normal">
+              Men
+            </a>
+            <a href="#" className="text-lg font-black lg:font-normal">
+              Women
+            </a>
+            <a href="#" className="text-lg font-black lg:font-normal">
+              About
+            </a>
+            <a href="#" className="text-lg font-black lg:font-normal">
+              Contact
+            </a>
+          </div>
+                </article>
+        </div>
         <div className="flex items-center gap-5">
           <button onClick={() => setIsCartOpen((prev) => !prev)}>
             <div className="relative">
@@ -42,39 +69,18 @@ function Header({ cart, onDeleteCart }) {
           </button>
           <img className="size-8" src={userImg} alt="" />
         </div>
+        
       </section>
 
       <div
-        className={`${isMenuOpen ? "visble" : "invisible"} fixed top-0 left-0 w-screen h-screen bg-black/50 z-40`}
+        className={`${isMenuOpen ? "visble" : "invisible"} fixed top-0 left-0 w-screen h-screen bg-black/50 z-40 lg:hidden`}
         onClick={() => setIsMenuOpen((prev) => !prev)}
       ></div>
 
-      <article
-        className={`${isMenuOpen ? "visible" : "invisible"}
-                fixed top-0 left-0 w-50 h-screen bg-white z-40
-                `}
-      >
-        <div className="flex flex-col pt-30 pl-8 gap-5">
-          <a href="#" className="text-lg font-black">
-            Collections
-          </a>
-          <a href="#" className="text-lg font-black">
-            Men
-          </a>
-          <a href="#" className="text-lg font-black">
-            Women
-          </a>
-          <a href="#" className="text-lg font-black">
-            About
-          </a>
-          <a href="#" className="text-lg font-black">
-            Contact
-          </a>
-        </div>
-      </article>
+      
 
       <div
-        className={`${isCartOpen ? "visible" : "invisible"}  min-h-50 max-h-fit w-11/12 rounded-lg bg-white absolute z-50 top-22 left-1/2 -translate-x-1/2 p-5`}
+        className={`${isCartOpen ? "visible" : "invisible"}  min-h-50 max-h-fit w-11/12 rounded-lg bg-white absolute z-50 top-22 left-1/2 -translate-x-1/2 p-5 lg:max-w-4/12 lg:translate-x-0 lg:ml-80`}
       >
         <h2 className="font-bold text-xl mb-5">Cart</h2>
         <div className="h-0.5 bg-black/10 w-full "></div>
