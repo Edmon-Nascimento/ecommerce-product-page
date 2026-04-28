@@ -18,9 +18,13 @@ function App() {
     }
   }
 
+  function handleDelete(){
+    setCartQuantity(0)
+  }
+
   return (
     <>
-      <Header cart={cartQuantity}/>
+      <Header cart={cartQuantity} onDeleteCart={handleDelete}/>
       <Slides />
       <main className="px-5 py-8">
         <p className="font-semibold text-[12px] tracking-widest text-gray-600">SNEAKER COMPANY</p>

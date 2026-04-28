@@ -4,8 +4,9 @@ import closeMenuIcon from "../assets/images/icon-close.svg";
 import cartIcon from "../assets/images/icon-cart.svg";
 import userImg from "../assets/images/image-avatar.png";
 import productImg from "../assets/images/image-product-1-thumbnail.jpg"
+import trashIcon from "../assets/images/icon-delete.svg"
 
-function Header({ cart }) {
+function Header({ cart, onDeleteCart }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
@@ -13,6 +14,7 @@ function Header({ cart }) {
     alert("Proceeding to checkout...")
     setIsCartOpen(prev => !prev)
   }
+  
 
   return (
     <header className="p-5 relative">
@@ -33,7 +35,10 @@ function Header({ cart }) {
 
         <div className="flex items-center gap-5">
           <button onClick={() => setIsCartOpen((prev) => !prev)}>
-            <img className="size-6" src={cartIcon} alt="" />
+            <div className="relative">
+              <img className="size-6" src={cartIcon} alt="" />
+              <p className="absolute -top-2 left-2 text-white bg-orange-600 p-1 rounded-full size-5 flex items-center justify-center">{cart}</p>
+            </div>
           </button>
           <img className="size-8" src={userImg} alt="" />
         </div>
@@ -84,7 +89,12 @@ function Header({ cart }) {
                 <img src={productImg} className="rounded-lg size-15" alt="" />
                 <div>
                     <p className="mb-2 text-gray-600">Fall Limited Edition Sneakers</p>
-                    <p className="text-gray-600">$125.00 x {cart} <span className="font-bold">${125*cart}.00</span></p>
+                    <div className="flex gap-3">
+                      <p className="text-gray-600">$125.00 x {cart} <span className="font-bold">${125*cart}.00</span></p>
+                      <button onClick={onDeleteCart}>
+                        <img src={trashIcon} />
+                      </button>
+                    </div>
                 </div>
               </div>
               <button className="bg-orange-500 p-3 w-full font-bold text-lg rounded-lg" onClick={()=>handleCheckout()}>Checkout</button>
