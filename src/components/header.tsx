@@ -6,7 +6,12 @@ import userImg from "../assets/images/image-avatar.png";
 import productImg from "../assets/images/image-product-1-thumbnail.jpg"
 import trashIcon from "../assets/images/icon-delete.svg"
 
-function Header({ cart, onDeleteCart }) {
+interface HeaderProps{
+  cart: number
+  onDeleteCart: ()=> void
+}
+
+function Header({ cart, onDeleteCart }:HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
