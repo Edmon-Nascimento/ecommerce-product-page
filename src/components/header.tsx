@@ -17,7 +17,7 @@ function Header({ cart, onDeleteCart }) {
   
 
   return (
-    <header className="p-5 relative max-w-7xl m-auto">
+    <header className="p-5 relative max-w-7xl m-auto select-none">
       <section className="flex justify-between w-full items-center">
 
         <div className="lg:flex lg:items-center lg:gap-5">
