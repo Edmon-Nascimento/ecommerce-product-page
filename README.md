@@ -1,73 +1,119 @@
-# React + TypeScript + Vite
+# E-commerce Product Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Responsive e-commerce product page built with React, TypeScript and TailwindCSS.  
+This project was developed as a solution to a Frontend Mentor challenge, focused on responsive layouts and interactive user experience.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Live Demo
 
-## React Compiler
+🔗 https://ecommerce-product-page-u9n1.vercel.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Preview
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Desktop
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+<img src="./screenshots/desktop.png" width="100%" />
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Mobile
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+<p align="center">
+  <img src="./screenshots/mobile.png" width="300" />
+</p>
+
+---
+
+## Technologies
+
+- React
+- TypeScript
+- TailwindCSS
+- Vite
+
+---
+
+## Features
+
+- Responsive layout for mobile and desktop
+- Product image slider
+- Lightbox product gallery
+- Shopping cart functionality
+- Quantity selector
+- Interactive mobile navigation menu
+- Dynamic cart updates
+- Product thumbnail preview
+
+---
+
+## Challenge
+
+This project was built as a solution to a Frontend Mentor challenge.
+
+Challenge link:  
+https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6
+
+---
+
+## What I Learned
+
+During this project I practiced and improved:
+
+- React state management with `useState`
+- Component-based architecture
+- Responsive UI development
+- Conditional rendering
+- Event handling in React
+- TailwindCSS utility-first workflow
+- TypeScript props typing
+- Interactive UI behaviors
+
+---
+
+## Future Improvements
+
+- Persist cart data with localStorage
+- Improve accessibility
+- Add keyboard navigation support
+- Add smooth animations and transitions
+- Refactor repeated UI logic into reusable components
+
+---
+
+## Run Locally
+
+Clone the project:
+
+```bash
+git clone https://github.com/Edmon-Nascimento/ecommerce-product-page
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+---
+
+## Author
+
+GitHub:  
+https://github.com/Edmon-Nascimento
+
+LinkedIn:  
+https://www.linkedin.com/in/edmon-nascimento/
+
+---
+
+## Credits
+
+Challenge by Frontend Mentor:  
+https://www.frontendmentor.io/
