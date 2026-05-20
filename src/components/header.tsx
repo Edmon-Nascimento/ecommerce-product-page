@@ -11,9 +11,10 @@ interface HeaderProps {
   onDeleteCart: () => void;
 }
 
-function Header({ cart, onDeleteCart }: HeaderProps) {
+function Header({ cart, onDeleteCart}: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const price = cart * 125
 
   function handleCheckout() {
     alert("Proceeding to checkout...");
@@ -106,8 +107,8 @@ function Header({ cart, onDeleteCart }: HeaderProps) {
                 </p>
                 <div className="flex gap-3">
                   <p className="text-gray-600">
-                    $125.00 x {cart}{" "}
-                    <span className="font-bold">${125 * cart}.00</span>
+                    $125.00 x {cart}
+                    <span className="font-bold ml-3">${price}.00</span>
                   </p>
                   <button onClick={onDeleteCart}>
                     <img src={trashIcon} />
